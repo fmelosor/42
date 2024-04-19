@@ -1,0 +1,91 @@
+Mais uma vez, você está livre para definir quantas funções desejar e nomeá-las como preferir. Não repetiremos esta instrução, exceto se ela tiver que ser explicitamente contraditada.
+
+Crie um script chamado var_to_dict.py no qual você irá copiar a seguinte lista de pares d como está em uma de suas funções:
+```python
+d = [
+('Hendrix' , '1942'),
+('Allman' , '1946'),
+('King' , '1925'),
+('Clapton' , '1945'),
+('Johnson' , '1911'),
+('Berry' , '1926'),
+('Vaughan' , '1954'),
+('Cooder' , '1947'),
+('Page' , '1944'),
+('Richards' , '1943'),
+('Hammett' , '1962'),
+('Cobain' , '1967'),
+('Garcia' , '1942'),
+('Beck' , '1944'),
+('Santana' , '1947'),
+('Ramone' , '1948'),
+('White' , '1975'),
+('Frusciante', '1970'),
+('Thompson' , '1949'),
+('Burton' , '1939')
+]
+```
+Seu script deve transformar essa variável em um dicionário. O ano será a chave e o nome do músico o valor. Em seguida, ele deve exibir esse dicionário na saída padrão seguindo um formato claro:
+```plaintext
+1970 : Frusciante
+1954 : Vaughan
+1948 : Ramone
+1944 : Page Beck
+1911 : Johnson
+...
+```
+A ordem final não precisa ser a mesma.
+
+# var_to_dict.py
+# -*- coding: utf-8 -*-
+
+
+# Lista de pares de dados fornecida no enunciado
+data = [
+    ('Hendrix', '1942'),
+    ('Allman', '1946'),
+    ('King', '1925'),
+    ('Clapton', '1945'),
+    ('Johnson', '1911'),
+    ('Berry', '1926'),
+    ('Vaughan', '1954'),
+    ('Cooder', '1947'),
+    ('Page', '1944'),
+    ('Richards', '1943'),
+    ('Hammett', '1962'),
+    ('Cobain', '1967'),
+    ('Garcia', '1942'),
+    ('Beck', '1944'),
+    ('Santana', '1947'),
+    ('Ramone', '1948'),
+    ('White', '1975'),
+    ('Frusciante', '1970'),
+    ('Thompson', '1949'),
+    ('Burton', '1939')
+]
+
+# Criar um dicionário vazio para armazenar os dados
+musicos_dict = {}
+
+# Percorrer a lista de pares de dados
+for musico, year in data:
+    # Inserir o par de dados no dicionário
+    musicos_dict[year] = musico
+
+# Exibir o dicionário
+print("Dicionário resultante:")
+print(musicos_dict)
+
+Este código Python, `var_to_dict.py`, tem o objetivo de converter a lista de pares de dados fornecida em um dicionário, onde o ano é a chave e o nome do músico é o valor. Aqui está uma explicação linha por linha:
+
+1. `# var_to_dict.py`: Um comentário indicando o nome do arquivo.
+2. `# -*- coding: utf-8 -*-`: Um comentário especificando a codificação do arquivo como UTF-8.
+3. `data = [...]`: Define uma lista chamada `data` que contém tuplas, cada uma representando um par de dados onde o primeiro elemento é o nome do músico e o segundo é o ano de nascimento.
+4. `musicos_dict = {}`: Cria um dicionário vazio chamado `musicos_dict` para armazenar os dados convertidos.
+5. `for musico, year in data:`: Um loop `for` que itera sobre cada tupla na lista `data`, descompactando as tuplas em `musico` e `year`.
+6. `musicos_dict[year] = musico`: Dentro do loop, atribui o nome do músico como valor e o ano como chave no dicionário `musicos_dict`.
+7. `print("Dicionário resultante:")`: Imprime uma mensagem indicando o início da exibição do dicionário.
+8. `print(musicos_dict)`: Imprime o dicionário resultante, ou seja, o dicionário onde os anos são as chaves e os nomes dos músicos são os valores.
+
+
+

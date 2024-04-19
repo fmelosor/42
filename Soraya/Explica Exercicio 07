@@ -1,0 +1,110 @@
+Começando com os mesmos dicionários, você deve copiá-los inalterados novamente em uma das funções de seu script e escrever um programa que se comporte da seguinte forma:
+- O programa deve receber como argumento uma string contendo tantas expressões quantas procurarmos, separadas por vírgula.
+- Para cada expressão nesta string, o programa deve detectar se é uma capital, um estado ou nenhum dos dois.
+- O programa não deve ser sensível a maiúsculas ou minúsculas. Também não deve levar em consideração espaços múltiplos.
+- Se não houver parâmetro ou houver muitos parâmetros, o programa não exibirá nada.
+- Quando houver duas vírgulas sucessivas na string, o programa não exibirá nada.
+- O programa deve exibir os resultados separados por uma quebra de linha e usar estritamente o seguinte formato:
+```sh
+$> python3 all_in.py "Nova Jersey, Tren ton, NewJersey, Trenton, toto, , sAlem"
+Trenton é a capital de Nova Jersey
+Tren ton não é uma cidade capital nem um estado
+NewJersey não é uma cidade capital nem um estado
+Trenton é a capital de Nova Jersey
+toto não é uma cidade capital nem um estado
+Salem
+```
+
+# -*- coding: utf-8 -*-
+
+# Dicionários de estados e cidades capitais
+states = {
+    "Oregon": "OR",
+    "Alabama": "AL",
+    "New Jersey": "NJ",
+    "Colorado": "CO"
+}
+
+capital_cities = {
+    "OR": "Salem",
+    "AL": "Montgomery",
+    "NJ": "Trenton",
+    "CO": "Denver"
+}
+
+#print("Dicionário de estados:")
+#print(states)
+
+#print("\nDicionário de cidades capitais:")
+#print(capital_cities)
+
+# def chama a funcao que ira detectar a cidade ou estado. entre pararenteses define o parâmeto da função, que chamamos de expressao
+def detect_city_or_state(expression):
+    # Limpa a expressão removendo espaços extras e convertendo para minúsculas. Strip é um método de string que remove os espaços
+    # em branco. Lower é um método string que converte todas as letras em minúsculas 
+    cleaned_expression = expression.strip().lower()
+
+    # Verificar se a expressão é uma capital
+    if cleaned_expression in capital_cities.values():
+        return "capital"
+
+    # Verificar se a expressão é um estado
+    elif cleaned_expression in states.keys():
+        return "estado"
+
+    # Se não for uma capital nem um estado, tentar encontrar correspondência removendo espaços extras
+    else:
+        # Tentar encontrar correspondência removendo espaços extras
+        cleaned_expression_no_space = "".join(cleaned_expression.split())
+        if cleaned_expression_no_space in capital_cities.values():
+            return "capital"
+        elif cleaned_expression_no_space in states.keys():
+            return "estado"
+        else:
+            return "nenhum"
+
+#importa o módulo sys que dá acesso a algumas variáveis do sistema
+def main():
+    import sys
+
+    # Verificar se foi fornecido o número correto de argumentos
+    # sys.argv é uma lista ista que contém os argumentos fornecidos na linha de comando quando o script é executado
+    # len etermina o comprimento ou a quantidade de itens em um objeto, dependendo do tipo do objeto fornecido como argumento
+    # !=2 verifica se o número de argumentos fornecido não é igual a 2
+    # sys.argv é uma lista que contém os argumentos passados para o script
+    
+    if len(sys.argv) != 2:
+        print("Erro: Por favor, forneça uma única string como argumento.")
+        return
+
+    # Obter a string de argumento fornecida
+    arg_string = sys.argv[1]
+
+    # Dividir a string de argumento em expressões separadas por vírgula
+    expressions = [exp.strip() for exp in arg_string.split(',')]
+
+    # Iterar (percorrer cada elemento e realizar alguma operaçao) sobre as expressões e determinar se são capitais, estados ou nenhum deles
+    # for é um loop (executar um trenho do código repetidamente até que uma condicao seja atendida)
+    for expression in expressions:
+        if expression == "":
+            continue  # Ignorar expressões vazias
+        elif "," in expression:
+            continue  # Ignorar expressões com vírgula adicional
+        else:
+            result = detect_city_or_state(expression)
+            if result == "capital":
+                state = [key for key, value in capital_cities.items() if value == expression][0]
+                print(f"{expression} é a capital de {state}")
+            elif result == "estado":
+                capital = capital_cities[states[expression]]
+                print(f"{expression} é a capital de {capital}")
+            else:
+                print(f"{expression} não é uma capital nem um estado")
+
+    # no bloco acima estou verificando se a variavel result é uma capital. se for verdadeiro, executa a linha do código. 
+    # depois encontramos o estado associado dessa capital.
+
+if __name__ == "__main__":
+    main()
+
+    #a linha if __name__ == "__main__": main() verifica se o script está sendo executado diretamente (em vez de ser importado como um módulo em outro script) e, se for o caso, chama a função main() para iniciar a execução do código principal do script. Isso permite que o script seja reutilizável e importável em outros scripts sem que o código dentro de main() seja executado quando importado.

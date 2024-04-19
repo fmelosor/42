@@ -1,0 +1,18 @@
+Exercício 00: Conquistando o Vale do Silício!
+Diretório de entrega: ex00/
+Arquivos para entregar: render.py, myCV.template, settings.py
+Funções permitidas: import sys, os, re
+Você acabou de concluir seu incrível curso de desenvolvedor e novas perspectivas estão prestes a mudar sua vida para sempre. Você chega no Vale do Silício com um objetivo em mente: desenvolver seu revolucionário gerador de currículos com uma tecnologia inovadora e se tornar o Bill Gates da indústria de busca por empregos!
+Agora, tudo o que resta fazer é... criar sua tecnologia.
+Crie um programa render.py que receberá um arquivo com a extensão .template como parâmetro. Este programa terá que ler o conteúdo do arquivo, substituir alguns padrões por valores definidos em um arquivo settings.py (um bloco if __name__ == '__main__': não será necessário para este arquivo) e escrever o resultado em um arquivo com a extensão .html.
+Você terá que ser capaz de replicar o seguinte exemplo com seu programa.
+$> cat settings.py
+name = "duoquadragintian"
+$> cat file.template
+<p>"-Who are you?
+-A {name}!"</p>
+$> python3 render.py file.template
+$> cat file.html
+<p>"-Who are you?
+-A duoquadragintian!"</p>
+Erros, incluindo extensão de arquivo errada, um arquivo inexistente ou um número errado de argumentos, terão que ser gerenciados.

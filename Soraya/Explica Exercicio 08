@@ -1,0 +1,91 @@
+Exercício 08: Ordenação de dicionário
+Diretório de entrega: ex08/
+Arquivos a serem entregues: my_sort.py
+Funções permitidas: N.A.
+Integre este dicionário em qualquer uma de suas funções como:
+d = {
+'Hendrix' : '1942',
+'Allman' : '1946',
+'King' : '1925',
+'Clapton' : '1945',
+'Johnson' : '1911',
+'Berry' : '1926',
+'Vaughan' : '1954',
+'Cooder' : '1947',
+'Page' : '1944',
+'Richards' : '1943',
+'Hammett' : '1962',
+'Cobain' : '1967',
+'Garcia' : '1942',
+'Beck' : '1944',
+'Santana' : '1947',
+'Ramone' : '1948',
+'White' : '1975',
+'Frusciante': '1970',
+'Thompson' : '1949',
+'Burton' : '1939',
+}
+Escreva um programa que exiba os nomes dos músicos ordenados por ano em ordem ascendente, depois em ordem alfabética para anos similares. Um por linha, sem mostrar o ano.
+
+
+# my_sort.py
+
+dicionario = {
+    'Hendrix': '1942',
+    'Allman': '1946',
+    'King': '1925',
+    'Clapton': '1945',
+    'Johnson': '1911',
+    'Berry': '1926',
+    'Vaughan': '1954',
+    'Cooder': '1947',
+    'Page': '1944',
+    'Richards': '1943',
+    'Hammett': '1962',
+    'Cobain': '1967',
+    'Garcia': '1942',
+    'Beck': '1944',
+    'Santana': '1947',
+    'Ramone': '1948',
+    'White': '1975',
+    'Frusciante': '1970',
+    'Thompson': '1949',
+    'Burton': '1939',
+}
+
+# Função para ordenar os músicos
+def sort_musicians(dicionario):
+    # Primeiro, ordenamos o dicionário com base no ano de nascimento dos músicos
+    #key=lambda x: (x[1], x[0]): Aqui, estamos definindo uma função lambda que será usada como chave para a ordenação. 
+    #Essa função recebe uma tupla x como entrada e retorna outra tupla (x[1], x[0]). 
+    #Isso significa que estamos ordenando as tuplas com base no segundo elemento primeiro (o ano de nascimento) e, em seguida, pelo primeiro elemento (o nome do músico)
+    # em caso de anos de nascimento iguais.
+    sorted_musicians = sorted(dicionario.items(), key=lambda x: (x[1], x[0]))
+
+    # Exibir apenas os nomes dos músicos, um por linha, sem mostrar o ano
+    for musician, _ in sorted_musicians:
+        print(musician)
+
+# Chamada da função principal
+if __name__ == "__main__":
+    sort_musicians(dicionario)
+    
+    
+    Nas linhas 33 a 53 um dicionário chamado dicionario é definido. Ele contém os nomes dos músicos como chaves e seus anos de nascimento como valores associados.
+    
+    Em: def sort_musicians(dicionario):
+    sorted_musicians = sorted(dicionario.items(), key=lambda x: (x[1], x[0]))
+    for musician, _ in sorted_musicians:
+        print(musician)
+        
+        uma função chamada sort_musicians é definida. Esta função aceita um dicionário como argumento. 
+        sorted(dicionario.items(), key=lambda x: (x[1], x[0])): Esta linha ordena os itens do dicionário com base em uma chave personalizada. Aqui, usamos uma função lambda como chave de ordenação. 
+        A função lambda retorna uma tupla com o ano de nascimento (segundo elemento) seguido pelo nome do músico (primeiro elemento). 
+        Isso garante que os músicos sejam ordenados primeiro pelo ano de nascimento e, em seguida, pelo nome em caso de anos de nascimento iguais.
+	O loop for itera sobre os músicos ordenados e imprime apenas o nome de cada músico, um por linha, sem mostrar o ano de nascimento.
+	
+	A parte final verifica se o script está sendo executado como o programa principal. Se for o caso, chama a função sort_musicians com o dicionário dicionario como argumento. 
+	Isso garante que a função seja executada quando o arquivo my_sort.py for executado diretamente.
+
+
+

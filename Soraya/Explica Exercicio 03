@@ -1,0 +1,30 @@
+Para este exercício, você está livre para definir quantas funções desejar e nomeá-las como preferir também.
+O arquivo d00.tar.gz no apêndice deste tópico contém uma subpasta ex03/ que possui um arquivo numbers.txt contendo os números de 1 a 100 separados por vírgula. Projete um script em Python chamado numbers.py cujo papel é abrir um arquivo numbers.txt, ler os números que ele contém e exibi-los na saída padrão, um por linha, sem nenhuma vírgula.
+
+# numbers.py
+# -*- coding: utf-8 -*-
+
+# Abrir o arquivo numbers.txt
+with open('numbers.txt', 'r') as file:
+    # Ler o conteúdo do arquivo
+    conteudo = file.read()
+
+print(conteudo)
+
+# Substituir as vírgulas por quebras de linha
+conteudo = conteudo.replace(',', '\n')
+
+# Exibir os números um por linha
+print(conteudo)
+
+Este código em Python tem como objetivo abrir o arquivo `numbers.txt`, ler seu conteúdo e exibir os números que ele contém, um por linha, sem nenhuma vírgula.
+
+Aqui está uma explicação linha por linha:
+
+1. `# numbers.py`: Este é um comentário que indica o nome do arquivo.
+2. `# -*- coding: utf-8 -*-`: Este é um comentário que especifica a codificação do arquivo como UTF-8, permitindo o uso de caracteres especiais.
+3. `with open('numbers.txt', 'r') as file:`: Esta linha abre o arquivo 'numbers.txt' em modo de leitura (`'r'`). O uso do `with` garante que o arquivo seja fechado automaticamente após o término do bloco de código, mesmo se ocorrerem exceções.
+4. `conteudo = file.read()`: Esta linha lê o conteúdo do arquivo e o armazena na variável `conteudo`.
+5. `print(conteudo)`: Esta linha imprime o conteúdo do arquivo, ou seja, todos os números separados por vírgulas.
+6. `conteudo = conteudo.replace(',', '\n')`: Esta linha substitui todas as vírgulas no conteúdo pelo caractere de quebra de linha (`'\n'`). Assim, cada número será exibido em uma linha separada.
+7. `print(conteudo)`: Esta linha imprime o conteúdo após a substituição das vírgulas por quebras de linha, resultando na exibição dos números um por linha.

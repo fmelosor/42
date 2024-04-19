@@ -1,0 +1,30 @@
+Exercício 09: Tabela periódica dos elementos
+Diretório de entrega: ex09/
+Arquivos a serem entregues: periodic_table.py
+Funções permitidas: import sys
+O arquivo d00.tar.gz no apêndice desta disciplina contém a subpasta ex09/ na qual você encontrará o arquivo periodic_table.txt, que descreve uma tabela periódica dos elementos em um formato feito para programadores.
+Crie um programa que utilize o arquivo para escrever uma página HTML representando a tabela periódica dos elementos em um formato apropriado.
+
+Cada elemento deve estar em uma 'caixa' de uma tabela HTML.
+O nome de um elemento deve estar em uma tag de título de nível 4.
+Os atributos de um elemento devem aparecer como uma lista. As listas devem indicar pelo menos os números atômicos, o símbolo e a massa atômica.
+Você deve pelo menos seguir o layout da Tabela Periódica de Mendeleiev conforme aparece no Google. Deve haver caixas vazias onde devem e também quebras de linha onde devem.
+Seu programa deve criar o arquivo de resultado periodic_table.html. É claro que este arquivo HTML deve ser legível em qualquer navegador e deve ser válido pela W3C.
+Você é livre para projetar seu programa como desejar. Não hesite em fragmentar seu código em funcionalidades específicas que você pode reutilizar. Você pode personalizar as tags com um estilo CSS "inline" para tornar sua entrega mais bonita (pense nas cores das bordas da tabela). Você até pode gerar um arquivo periodic_table.css se preferir.
+Aqui está um trecho de um exemplo de saída que lhe dará uma ideia:
+[...]
+<table>
+<tr>
+<td style="border: 1px solid black; padding:10px">
+<h4>Hidrogênio</h4>
+<ul>
+<li>Nº 42</li>
+<li>H</li>
+<li>1.00794</li>
+<li>1 elétron</li>
+<ul>
+</td>
+[...]
+
+
+

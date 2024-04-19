@@ -1,0 +1,70 @@
+Você recebe os mesmos dicionários do exercício anterior. Você deve copiá-los novamente, sem alterações, em uma das funções do seu script.
+
+Crie um programa que receba a cidade capital como argumento e exiba o estado correspondente desta vez. Os demais comportamentos do seu programa devem permanecer os mesmos que no exercício anterior.
+
+Exemplos de uso:
+
+```shell
+$> python3 state.py Salem
+Oregon
+$> python3 state.py Paris
+Cidade capital desconhecida
+$> python3 stat
+```
+
+# -*- coding: utf-8 -*-
+
+# Dicionários de estados e cidades capitais
+states = {
+    "Oregon": "OR",
+    "Alabama": "AL",
+    "New Jersey": "NJ",
+    "Colorado": "CO"
+}
+
+capital_cities = {
+    "OR": "Salem",
+    "AL": "Montgomery",
+    "NJ": "Trenton",
+    "CO": "Denver"
+}
+
+#print("Dicionário de estados:")
+#print(states)
+
+#print("\nDicionário de cidades capitais:")
+#print(capital_cities)
+
+def get_state(capital):
+    for state, capital_city in capital_cities.items():
+        if capital_city == capital:
+            return state
+    return "Capital desconhecida"
+
+def main():
+    import sys
+    # Verificar se o número de argumentos é válido
+    if len(sys.argv) == 2:
+        capital = sys.argv[1]
+        # Obter o estado correspondente e exibir na saída padrão
+        state = get_state(capital)
+        print(state)
+    elif len(sys.argv) == 1:
+        print("Por favor, forneça uma capital como argumento.")
+    else:
+        print("Por favor, forneça apenas uma capital como argumento.")
+
+if __name__ == "__main__":
+    main()
+
+Este código em Python tem como objetivo determinar o estado correspondente a uma cidade capital fornecida como argumento na linha de comando. Aqui está uma explicação linha por linha:
+
+1. `# -*- coding: utf-8 -*-`: Um comentário que especifica a codificação do arquivo como UTF-8.
+
+2. `states = {...}` e `capital_cities = {...}`: São dois dicionários que relacionam estados com suas respectivas abreviações e abreviações com suas respectivas cidades capitais, respectivamente.
+
+3. A função `get_state(capital)`: Recebe uma cidade capital como argumento e itera sobre os itens do dicionário `capital_cities` utilizando o método `items()`, que retorna uma lista de tuplas com a chave e o valor. Para cada par de estado e cidade capital, verifica se a cidade capital fornecida corresponde à cidade capital no dicionário. Se corresponder, retorna o estado correspondente; caso contrário, retorna "Capital desconhecida".
+
+4. A função `main()`: É a função principal do script. Primeiro, importa o módulo `sys` para lidar com os argumentos da linha de comando. Em seguida, verifica se o número de argumentos é válido: se houver exatamente dois argumentos, o primeiro sendo o nome do script e o segundo sendo a capital fornecida pelo usuário. Se houver apenas um argumento, exibe uma mensagem solicitando ao usuário que forneça uma capital como argumento. Se houver mais de dois argumentos, exibe uma mensagem solicitando ao usuário que forneça apenas uma capital como argumento.
+
+5. `if __name__ == "__main__":`: Verifica se o script está sendo executado como o programa principal. Se sim, chama a função `main()`, que executa todo o código dentro dela. Isso permite que o script seja tanto executado diretamente quanto importado como um módulo em outro script sem executar o código no bloco `main()` quando importado.

@@ -1,0 +1,97 @@
+Aqui estão os dicionários que você precisa copiar inalterados em uma das funções do seu script:
+```python
+states = {
+    "Oregon" : "OR",
+    "Alabama" : "AL",
+    "New Jersey": "NJ",
+    "Colorado" : "CO"
+}
+
+capital_cities = {
+    "OR": "Salem",
+    "AL": "Montgomery",
+    "NJ": "Trenton",
+    "CO": "Denver"
+}
+```
+Escreva um programa que receba um estado como argumento (por exemplo: Oregon) e exiba sua cidade capital (por exemplo: Salem) na saída padrão. Se o argumento não retornar nenhum resultado, seu script deve exibir: Estado desconhecido. Se não houver argumento - ou se houver muitos - seu script não deve fazer nada e sair.
+
+Exemplos de uso:
+
+```shell
+$> python3 capital_city.py Oregon
+Salem
+$> python3 capital_city.py Ile-De-France
+Estado desconhecido
+$> python3 capital_city.py
+$> python3 capital_city.py Oregon Alabama
+$> python3 capital_city.py Oregon Alabama Ile-De-Franc
+```
+
+# -*- coding: utf-8 -*-
+
+# Dicionários de estados e cidades capitais
+states = {
+    "Oregon": "OR",
+    "Alabama": "AL",
+    "New Jersey": "NJ",
+    "Colorado": "CO"
+}
+
+capital_cities = {
+    "OR": "Salem",
+    "AL": "Montgomery",
+    "NJ": "Trenton",
+    "CO": "Denver"
+}
+
+#print("Dicionário de estados:")
+#print(states)
+
+#print("\nDicionário de cidades capitais:")
+#print(capital_cities)
+
+def get_capital(state):
+    # Verificar se o estado está no dicionário de estados
+    if state in states:
+        # Obter a abreviação do estado
+        abbreviation = states[state]
+        # Verificar se a abreviação está no dicionário de cidades capitais
+        if abbreviation in capital_cities:
+            # Retornar a cidade capital correspondente
+            return capital_cities[abbreviation]
+        else:
+            return "Cidade desconhecida"
+    else:
+        return "Estado desconhecido"
+
+def main():
+    import sys
+    # Verificar se o número de argumentos é válido
+    if len(sys.argv) == 2:
+        state = sys.argv[1]
+        # Obter a cidade capital e exibir na saída padrão
+        capital = get_capital(state)
+        print(capital)
+    elif len(sys.argv) == 1:
+        print("Por favor, forneça um estado como argumento.")
+    else:
+        print("Por favor, forneça apenas um estado como argumento.")
+
+if __name__ == "__main__":
+    main()
+
+
+Este código em Python tem como objetivo determinar a cidade capital de um estado fornecido como argumento na linha de comando. Aqui está uma explicação linha por linha:
+
+1. `# -*- coding: utf-8 -*-`: Um comentário que especifica a codificação do arquivo como UTF-8.
+
+2. `states = {...}` e `capital_cities = {...}`: São dois dicionários que relacionam estados com suas respectivas abreviações e abreviações com suas respectivas cidades capitais, respectivamente.
+
+3. A função `get_capital(state)`: Recebe um estado como argumento e verifica se ele está presente no dicionário de estados. Se estiver, obtém a abreviação do estado e verifica se esta abreviação está no dicionário de cidades capitais. Se estiver, retorna a cidade capital correspondente; caso contrário, retorna "Cidade desconhecida". Se o estado não estiver no dicionário de estados, retorna "Estado desconhecido".
+
+4. A função `main()`: É a função principal do script. Primeiro, importa o módulo `sys` para lidar com os argumentos da linha de comando. Em seguida, verifica se o número de argumentos é válido: se houver exatamente dois argumentos, o primeiro sendo o nome do script e o segundo sendo o estado fornecido pelo usuário. Se houver apenas um argumento, exibe uma mensagem solicitando ao usuário que forneça um estado como argumento. Se houver mais de dois argumentos, exibe uma mensagem solicitando ao usuário que forneça apenas um estado como argumento.
+
+5. `if __name__ == "__main__":`: Verifica se o script está sendo executado como o programa principal. Se sim, chama a função `main()`, que executa todo o código dentro dela. Isso permite que o script seja tanto executado diretamente quanto importado como um módulo em outro script sem executar o código no bloco `main()` quando importado.
+
+No geral, o código verifica se um estado é fornecido como argumento na linha de comando, determina sua cidade capital correspondente e exibe-a na saída padrão. Ele também lida com diferentes casos de uso, como nenhum estado fornecido, múltiplos estados fornecidos ou nenhum estado conhecido.

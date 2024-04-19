@@ -1,0 +1,64 @@
+Crie um script chamado var.py no qual você definirá uma função my_var. Nesta função, você declarará 9 variáveis de tipos diferentes e as imprimirá na saída padrão. Você reproduzirá exatamente esta saída:
+
+```shell
+$> python3 var.py
+42 tem o tipo <class 'int'>
+42 tem o tipo <class 'str'>
+quarante-deux tem o tipo <class 'str'>
+42.0 tem o tipo <class 'float'>
+True tem o tipo <class 'bool'>
+[42] tem o tipo <class 'list'>
+{42: 42} tem o tipo <class 'dict'>
+(42,) tem o tipo <class 'tuple'>
+set() tem o tipo <class 'set'>
+$>
+```
+
+Naturalmente, escrever explicitamente os tipos de variáveis em seus prints no código é estritamente proibido. Não se esqueça de chamar sua função no final do seu script conforme exigido pelas instruções:
+
+```python
+if __name__ == '__main__':
+    my_var()
+```
+
+def my_var():
+    # Declarando as variáveis
+    var1 = 42  #class int representa numero inteiro em Python
+    var2 = "42" #class str representa strings 
+    var3 = "quarante-deux" 
+    var4 = 42.0 #class float representa numeros flutuantes (inteiro e fracao)
+    var5 = True # class bool representa valores booleanos (Verdadeiro ou Falso - True ou False)
+    var6 = [42] #class list representa uma lista
+    var7 = {42: 42} #class dict representa um dicionario
+    var8 = (42,) #class tuple representa uma coleção ordenada e imutavel de itens
+    var9 = set() #class set representa conjuntos (colecao nao ordenada e sem elementos duplicados)
+
+  # Imprima as variaveis junto com os seus tipos
+    print(f"{var1} has a type {type(var1)}")
+    print(f"{var2} has a type {type(var2)}")
+    print(f"{var3} has a type {type(var3)}")
+    print(f"{var4} has a type {type(var4)}")
+    print(f"{var5} has a type {type(var5)}")
+    print(f"{var6} has a type {type(var6)}")
+    print(f"{var7} has a type {type(var7)}")
+    print(f"{var8} has a type {type(var8)}")
+    print(f"{var9} has a type {type(var9)}")
+
+if __name__ == '__main__':
+my_var()
+
+Este código define uma função chamada `my_var()`, que declara nove variáveis de tipos diferentes e imprime cada variável juntamente com seu tipo.
+
+1. `var1 = 42`: Define uma variável `var1` e atribui o valor 42, que é do tipo inteiro (`int`).
+2. `var2 = "42"`: Define uma variável `var2` e atribui o valor "42", que é do tipo string (`str`).
+3. `var3 = "quarante-deux"`: Define uma variável `var3` e atribui o valor "quarante-deux", que também é do tipo string (`str`).
+4. `var4 = 42.0`: Define uma variável `var4` e atribui o valor 42.0, que é do tipo float (`float`).
+5. `var5 = True`: Define uma variável `var5` e atribui o valor `True`, que é do tipo booleano (`bool`).
+6. `var6 = [42]`: Define uma variável `var6` e atribui uma lista contendo o valor 42, que é do tipo lista (`list`).
+7. `var7 = {42: 42}`: Define uma variável `var7` e atribui um dicionário com chave e valor 42, que é do tipo dicionário (`dict`).
+8. `var8 = (42,)`: Define uma variável `var8` e atribui uma tupla contendo o valor 42, que é do tipo tupla (`tuple`).
+9. `var9 = set()`: Define uma variável `var9` e atribui um conjunto vazio, que é do tipo conjunto (`set`).
+
+Após a declaração das variáveis, o código imprime cada variável junto com seu tipo utilizando o método `print()` e a f-string formatando a string de saída.
+
+Por fim, verifica-se se o script está sendo executado como o programa principal (`if __name__ == '__main__':`) e, se sim, chama a função `my_var()`, que executa todo o código dentro dela.

@@ -1,0 +1,96 @@
+Você irá escrever seu currículo em HTML/CSS respeitando as seguintes restrições:
+- Você deve respeitar a semântica das suas tags HTML, bem como a separação entre estilo e conteúdo.
+- Você deve criar um arquivo HTML consistente com o conteúdo mínimo exigido: nome, sobrenome, habilidades e trajetória profissional.
+- Você deve exibir pelo menos um título com a tag title e um título com a tag h1.
+- Você deve usar pelo menos uma tabela com as tags table, th, tr e td.
+- Você deve usar pelo menos uma lista com a tag ul e uma lista com a tag ol. Os elementos devem usar a tag li.
+- As bordas da tabela devem ser visíveis (solid). As bordas da tabela devem ser mescladas (collapse).
+- A célula inferior direita de uma tabela deve ter uma cor de borda #424242.
+- Você deve usar uma solução sintática diferente para cada instrução anterior: para a primeira, use a tag style no cabeçalho da sua página. Para a segunda, use um atributo de estilo na tag que você considerar apropriada.
+Não há instruções especiais sobre a veracidade das informações. Você pode criar um currículo extravagante se desejar, contanto que siga as instruções acima.
+
+
+<!DOCTYPE html>
+<header>
+<title>Currículo</title>
+<style>
+    table {
+        border-collapse: collapse; /* Bordas mescladas */
+        border: 2px solid #424242; /* Cor da borda */
+    }
+    th, td {
+        border: 2px solid #424242; /* Cor da borda */
+        padding: 8px; /* Espaçamento interno */
+    }
+</style>
+</header>
+
+<header>
+<h1>Soraya Florindo</h1>
+</header>
+
+<section id="habilidades">
+<h2>Habilidades</h2>
+<table border="1">
+<tr>
+<th>Habilidade</th>
+</tr>
+<tr>
+<td>Metodologia Ágil</td>
+</tr>
+<tr>
+<td>Adaptabilidade</td>
+</tr>
+<tr>
+<td>Comunicação Interpessoal</td>
+</tr>
+</table>
+</section>
+        
+<section id="trajetoria-profissional">
+<h2>Trajetória Profissional</h2>
+<ol>
+<li>Recursos Humanos</li>
+<li>Jurídico Trabalhista</li>
+</ol>
+
+</html>
+
+
+Este é um exemplo básico de um currículo simples em HTML. Vamos analisar cada parte do código:
+
+1. `<!DOCTYPE html>`: Esta é uma declaração do tipo de documento (DOCTYPE) que indica ao navegador que o documento está escrito em HTML5.
+
+2. `<header>`: Esta tag representa um cabeçalho ou seção de cabeçalho. No entanto, neste caso, parece ter sido usada incorretamente. O conteúdo dentro dessa tag geralmente é usado para elementos de cabeçalho, como títulos, logotipos, etc. 
+
+3. `<title>Currículo</title>`: Define o título da página, que será exibido na aba ou no título da janela do navegador.
+
+4. `<style>`: Esta tag é usada para incorporar estilos CSS diretamente no documento HTML.
+
+5. `table {...}`: Define estilos para todas as tabelas na página. Aqui, estamos definindo a propriedade `border-collapse` como `collapse` para mesclar as bordas das células da tabela e a cor da borda como `#424242`.
+
+6. `th, td {...}`: Define estilos para as células de cabeçalho (th) e células de dados (td) da tabela. Aqui, estamos definindo a cor da borda e o preenchimento interno para as células da tabela.
+
+7. `<h1>Soraya Florindo</h1>`: Define o título principal da página, que neste caso é o nome da pessoa.
+
+8. `<section id="habilidades">`: Define uma seção com o id "habilidades".
+
+9. `<h2>Habilidades</h2>`: Define um subtitulo dentro da seção habilidades.
+
+10. `<table border="1">`: Define uma tabela com uma borda padrão de espessura 1.
+
+11. `<tr>...</tr>`: Define uma linha dentro da tabela.
+
+12. `<th>...</th>`: Define uma célula de cabeçalho (header) dentro da linha da tabela.
+
+13. `<td>...</td>`: Define uma célula de dados (data) dentro da linha da tabela.
+
+14. `<section id="trajetoria-profissional">`: Define outra seção com o id "trajetoria-profissional".
+
+15. `<h2>Trajetória Profissional</h2>`: Define um subtitulo dentro da seção trajetória profissional.
+
+16. `<ol>...</ol>`: Define uma lista ordenada (ordered list) que contém itens numerados em ordem.
+
+17. `<li>...</li>`: Define cada item da lista ordenada.
+
+Faltou o elemento `<html>` para abrir o documento HTML corretamente. Certifique-se de incluí-lo no início do código para garantir que o documento seja interpretado corretamente pelos navegadores.
